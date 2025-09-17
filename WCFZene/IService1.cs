@@ -18,9 +18,11 @@ namespace WCFZene
         //Create
         string InsertEloado(Eloado eloado);
 
+        [OperationContract]
         //Read
         List<Eloado> GetAllEloadok();
 
+        [OperationContract]
         //Update
         string UpdateEloado(Eloado eloado);
 

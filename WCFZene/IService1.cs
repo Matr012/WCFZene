@@ -43,5 +43,6 @@ namespace WCFZene
 			get { return stringValue; }
 			set { stringValue = value; }
 		}
+
 	}
 }

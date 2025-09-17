@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using WCFZene.Models;
 
 namespace WCFZene
 {
@@ -14,35 +15,25 @@ namespace WCFZene
 	{
 
 		[OperationContract]
-		string GetData(int value);
+        //Create
+        string InsertEloado(Eloado eloado);
 
-		[OperationContract]
-		CompositeType GetDataUsingDataContract(CompositeType composite);
+        //Read
+        List<Eloado> GetAllEloadok();
 
-		// TODO: Add your service operations here
-	}
+        //Update
+        string UpdateEloado(Eloado eloado);
+
+        //Delete
+        [OperationContract]
+        string DeleteEloado(int id);
 
 
-	// Use a data contract as illustrated in the sample below to add composite types to service operations.
-	[DataContract]
-	public class CompositeType
-	{
-		bool boolValue = true;
-		string stringValue = "Hello ";
+        // TODO: Add your service operations here
+    }
 
-		[DataMember]
-		public bool BoolValue
-		{
-			get { return boolValue; }
-			set { boolValue = value; }
-		}
 
-		[DataMember]
-		public string StringValue
-		{
-			get { return stringValue; }
-			set { stringValue = value; }
-		}
 
-	}
+
+
 }
